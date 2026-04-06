@@ -8,7 +8,7 @@ export default function Meals(){
             const response = await fetch('http://localhost:3000/meals');
 
             if(!response.ok){
-
+                return;
             }
 
             const meals = await response.json();
@@ -18,5 +18,9 @@ export default function Meals(){
         fetchMeals();
     }, []);
 
-    return <ul id="meals">{loadedMeals.map(meal => <li key={meal.id}></li>)}</ul>
+    return (<ul id="meals">
+        {loadedMeals.map((meal) => (
+            <li key={meal.id}>{meal.name}</li>
+        ))}</ul>
+    );
 }
