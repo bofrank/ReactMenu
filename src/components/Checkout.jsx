@@ -31,6 +31,11 @@ export default function Checkout(){
         userProgressCtx.hideCheckout();
     }
 
+    function handleFinish(){
+        userProgressCtx.hideCheckout();
+        cartCtx.clearCart();
+    }
+
     function handleSubmit(event){
         event.preventDefault();
 
@@ -67,6 +72,17 @@ export default function Checkout(){
 
     if (isSending) {
         actions = <span>Sending order data...</span>;
+    }
+
+    if(data && !error){
+        return <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleFinish}>
+            <h2>Success!</h2>
+            <p>Your order was submitted successfully.</p>
+            <p>We will email you confirmation.</p>
+            <p className="modal-actions">
+                <Button onClick={handleFinish}>Okay</Button>
+            </p>
+        </Modal>
     }
 
     return <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleClose}>
