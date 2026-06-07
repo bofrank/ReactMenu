@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
 
+/* CSS Variables for consistent theming */
+:root {
+  --color-primary: #ffc404;
+  --color-primary-hover: #ffab04;
+  --color-bg-dark: #29251c;
+  --color-bg-darker: #2c2306;
+  --color-text: #d9e2f1;
+  --color-card-bg: #1d1a16;
+  --color-accent: #312c1d;
+  --color-error: #f9b8b8;
+  --color-error-text: #6d0b0b;
+  --color-modal-bg: #e4ddd4;
+  --color-modal-text: #1d1a16;
+  --border-radius: 4px;
+  --border-radius-lg: 6px;
+  --border-radius-xl: 1rem;
+  --transition-speed: 0.2s ease;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,10 +26,8 @@
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#29251c, #2c2306);
-  color: #d9e2f1;
+  background: linear-gradient(var(--color-bg-dark), var(--color-bg-darker));
+  color: var(--color-text);
   min-height: 100vh;
 }
 
@@ -32,7 +49,7 @@ body {
   height: 4rem;
   object-fit: contain;
   border-radius: 50%;
-  border: 2px solid #ffc404;
+  border: 2px solid var(--color-primary);
 }
 
 #main-header button {
@@ -45,7 +62,7 @@ h1 {
   font-weight: 700;
   font-size: 2rem;
   margin: 0;
-  color: #ffc404;
+  color: var(--color-primary);
   letter-spacing: 0.2rem;
   text-transform: uppercase;
 }
@@ -57,16 +74,22 @@ h1 {
   margin: 2rem auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1rem;
 }
 
 .meal-item {
-  background-color: #1d1a16;
-  border-radius: 1rem;
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius-xl);
   overflow: hidden;
   text-align: center;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.meal-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .meal-item article {
@@ -94,13 +117,13 @@ h1 {
 
 .meal-item-price {
   display: inline-block;
-  background-color: #312c1d;
-  color: #ffc404;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 0.9rem;
   font-weight: bold;
   padding: 0.5rem 2rem;
   margin: 0;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
 }
 
 .meal-item-actions {
@@ -124,12 +147,12 @@ h1 {
 }
 
 .modal-actions .text-button {
-  color: #1d1a16;
+  color: var(--color-modal-text);
 }
 
 .modal-actions .text-button:hover,
 .modal-actions .text-button:active {
-  color: #312c1d;
+  color: var(--color-accent);
 }
 
 .cart-total {
@@ -165,17 +188,18 @@ h1 {
   height: 1.5rem;
   border-radius: 50%;
   border: none;
-  background-color: #312c1d;
-  color: #ffc404;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all var(--transition-speed);
 }
 
 .cart-item-actions button:hover,
 .cart-item-actions button:active {
-  background-color: #1d1a16;
-  color: #ffab04;
+  background-color: var(--color-card-bg);
+  color: var(--color-primary-hover);
 }
 
 .control {
@@ -194,8 +218,15 @@ h1 {
   max-width: 20rem;
   font: inherit;
   padding: 0.5rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   border: 1px solid #ccc;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.control input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(255, 196, 4, 0.1);
 }
 
 .control-row {
@@ -207,17 +238,18 @@ h1 {
 .button {
   font: inherit;
   cursor: pointer;
-  background-color: #ffc404;
-  border: 1px solid #ffc404;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
   color: #1f1a09;
   padding: 0.5rem 1.5rem;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed);
 }
 
 .button:hover,
 .button:active {
-  background-color: #ffab04;
-  border-color: #ffab04;
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
   color: #1f1a09;
 }
 
@@ -226,17 +258,18 @@ h1 {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: #ffc404;
+  color: var(--color-primary);
+  transition: color var(--transition-speed);
 }
 
 .text-button:hover,
 .text-button:active {
-  color: #ffab04;
+  color: var(--color-primary-hover);
 }
 
 .modal {
-  background-color: #e4ddd4;
-  border-radius: 6px;
+  background-color: var(--color-modal-bg);
+  border-radius: var(--border-radius-lg);
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   padding: 1rem;
@@ -258,9 +291,9 @@ h1 {
   max-width: 25rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #f9b8b8;
-  color: #6d0b0b;
-  border-radius: 6px;
+  background-color: var(--color-error);
+  color: var(--color-error-text);
+  border-radius: var(--border-radius-lg);
 }
 
 .error h2 {
@@ -280,5 +313,53 @@ h1 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #main-header {
+    padding: 2rem 5%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #meals {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+
+  .modal {
+    width: 95%;
+  }
+
+  .control-row {
+    flex-direction: column;
+  }
+
+  .control input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #main-header {
+    padding: 1.5rem 3%;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .meal-item img {
+    height: 15rem;
+  }
+
+  #meals {
+    grid-template-columns: 1fr;
   }
 }
