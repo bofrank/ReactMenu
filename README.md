@@ -11,8 +11,27 @@ A food ordering app built with React that allows users to browse a menu, add ite
 
 ## Technologies
 
-- React
-- [Add your other key dependencies: state management, routing, styling, etc.]
+### Frontend
+- **React** (certified) - Core UI framework
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **million.js** - Performance optimization
+
+### Development & Design
+- **Node.js** - Runtime environment
+- **Git & GitHub** - Version control
+- **Figma** - UI/UX design
+- **Framer** - Prototyping and animations
+
+### AI & Automation
+- **Google Gemini & AI Studio** - AI-powered features
+- **n8n** - Workflow automation
+- **Lovable** - Development assistance
+
+### Collaboration & Management
+- **Jira** - Project management
+- **Confluence** - Documentation
+- **Zeplin** - Design handoff
 
 ## Installation
 
