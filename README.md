@@ -63,12 +63,13 @@ Describe how to use the app here.
 
 ## Contributing
 
-Contributions are welcome! Please [add guidelines].
-
-## License
-
-[Add your chosen license]
+Contributions are welcome! Please follow these guidelines:
+- Fork the repository
+- Create a feature branch (`git checkout -b feature/amazing-feature`)
+- Make your changes and commit them (`git commit -m 'Add amazing feature'`)
+- Push to the branch (`git push origin feature/amazing-feature`)
+- Open a pull request
 
 ## Contact
 
-For questions, reach out to [your contact info].
+For questions, check out my [GitHub bio](https://github.com/bofrank).
