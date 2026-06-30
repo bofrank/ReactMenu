@@ -70,6 +70,12 @@ Contributions are welcome! Please follow these guidelines:
 - Push to the branch (`git push origin feature/amazing-feature`)
 - Open a pull request
 
+## Story
+
+ReactMenu began as a simple way to explore what makes everyday dining feel human in an increasingly digital city. Instead of treating food orders as just transactions, this app focuses on the small rituals of browsing a menu, discovering new dishes, and keeping track of what you and your friends enjoy. By combining a familiar restaurant experience with a fast, responsive interface, ReactMenu aims to turn a practical tool into a subtle piece of daily culture.
+
+The project also reflects a broader shift in how designers and developers collaborate. React, Vite, Tailwind CSS, and million.js create a lightweight technical foundation, while tools like Figma, Framer, Zeplin, Jira, and Confluence support a more narrative-driven design process behind the scenes. ReactMenu is not just a showcase of frameworks and automation; it is an experiment in how contemporary interfaces can quietly support local habits, shared meals, and the evolving culture around how we order and enjoy food.
+
 ## Contact
 
 For questions, check out my [GitHub bio](https://github.com/bofrank).
